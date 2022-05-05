@@ -1,0 +1,33 @@
+<div class="container mx-auto" style="width: 300px">
+    <div class="row mt-4 text-center">
+        <div class="col">
+            <label for="">First Number</label>
+            <input class="text-center" (input)="getNumber(firstNumber.value, 0)" type="number" #firstNumber />
+        </div>
+        <div class="col mt-2">
+            <label for="">Second Number</label>
+            <input class="text-center" (input)="getNumber(secondNumber.value, 1)" type="number" #secondNumber />
+        </div>
+    </div>
+    <hr />
+
+    <div class="row text-center">
+        <div class="col">
+            <button (click)="add()" class="btn btn-primary">+</button>
+        </div>
+        <div class="col">
+            <button (click)="subtract()" class="btn btn-primary">-</button>
+        </div>
+        <div class="col">
+            <button (click)="multiply()" class="btn btn-primary">*</button>
+        </div>
+        <div class="col">
+            <button (click)="divide()" class="btn btn-primary">/</button>
+        </div>
+    </div>
+
+    <hr />
+    <div *ngIf="firstNumber || secondNumber" class="text-center">
+        <label for="" [textContent]="result"></label>
+    </div>
+</div>
